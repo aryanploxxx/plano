@@ -48,22 +48,36 @@ const Questionnaire = () => {
     setSubmissionStatus("idle");
     
     try {
-      // Simulate API call with a timeout
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Create payload from state
+      const payload = {
+        children: state.children.map(child => child.age),
+        interests: state.interests,
+        customInterest: state.customInterest,
+        helpOption: state.helpOption,
+        customHelpOption: state.customHelpOption
+      };
+
+      // Convert payload to query parameters
+      const queryParams = new URLSearchParams({
+        children: JSON.stringify(payload.children),
+        interests: JSON.stringify(payload.interests),
+        customInterest: payload.customInterest,
+        helpOption: payload.helpOption,
+        customHelpOption: payload.customHelpOption
+      }).toString();
+
+      // Make mock GET request
+      const response = await fetch(`/api/mock-endpoint?${queryParams}`);
       
-      // Show success message
-      setSubmissionStatus("success");
-      
-      // Reset form
-      setState({
-        children: [{ id: crypto.randomUUID(), age: "" }],
-        interests: [],
-        customInterest: "",
-        helpOption: "",
-        customHelpOption: "",
-      });
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      // Redirect to dashboard with query parameters
+      window.location.href = `/activity-listing`;
       
     } catch (error) {
+      console.error('Error:', error);
       setSubmissionStatus("error");
     } finally {
       setIsSubmitting(false);

@@ -10,18 +10,20 @@ export default function LoggedInNavbar() {
   }
 
   return (
-    <nav className="w-full bg-white shadow-xs px-4 sm:px-6 lg:px-12">
+    <nav className="w-full bg-white shadow-xs px-3 sm:px-6 lg:px-12">
       {/* Desktop and Mobile Navbar */}
       <div className="max-w-7xl mx-auto lg:px-0">
         <div className="flex justify-between h-20 items-center">
             {/* Logo */}
-            <div className="flex-shrink-0">
-                    <img 
-                        src="/plan-o-logo-navbar.svg" 
-                        alt="Plan Logo" 
-                        className="h-12 w-100px md:w-auto"
-                    />
-            </div>
+            <a href='/'>
+              <div className="flex-shrink-0">
+                <img 
+                    src="/plan-o-logo-navbar.svg" 
+                    alt="Plan Logo" 
+                    className="h-12 w-100px md:w-auto"
+                />
+              </div>
+            </a>
 
             <div className="hidden lg:flex flex-row items-center justify-end gap-14 w-full ">
               {/* Desktop Navigation Links */}
@@ -29,25 +31,27 @@ export default function LoggedInNavbar() {
                   <a href="#" className="text-[#6D737A] poppins-regular hover:text-gray-900 px-3 py-2 text-base font-medium">
                     Our Story
                   </a>
-                  <a href="#" className="text-[#6D737A] poppins-regular hover:text-gray-900 px-3 py-2 text-base font-medium">
+                  <a href="/activity-listing" className="text-[#6D737A] poppins-regular hover:text-gray-900 px-3 py-2 text-base font-medium">
                     Search Activities
                   </a>
                   <a href="#" className="text-[#6D737A] poppins-regular hover:text-gray-900 px-3 py-2 text-base font-medium">
                     For Providers
                   </a>
-                  <a href="#" className="text-[#6D737A] poppins-regular hover:text-gray-900 px-3 py-2 text-base font-medium">
+                  <a href="/contact" className="text-[#6D737A] poppins-regular hover:text-gray-900 px-3 py-2 text-base font-medium">
                     Contact
                   </a>
               </div>
 
               {/* Desktop Buttons */}
-              <div className='hidden md:flex flex-row items-center gap-4'>  
-                  <div className="bg-gradient-to-r from-[#00A1E4] to-[#FF3B7B] p-[2px] rounded-xl">
-                      <button className="bg-[#2643A2] text-nowrap text-white px-8 py-3 rounded-xl w-full h-full font-semibold transition duration-300 hover:bg-[#1e3788] hover:cursor-pointer">
-                          Your Profile
-                      </button>
-                  </div>
-              </div>
+              <a href='/profile'>
+                <div className='hidden md:flex flex-row items-center gap-4'>  
+                    <div className="bg-gradient-to-r from-[#00A1E4] to-[#FF3B7B] p-[2px] rounded-xl">
+                        <button className="bg-[#2643A2] text-nowrap text-white px-8 py-3 rounded-xl w-full h-full font-semibold transition duration-300 hover:bg-[#1e3788] hover:cursor-pointer">
+                            Your Profile
+                        </button>
+                    </div>
+                </div>
+              </a>
             </div>
 
           {/* Mobile menu button */}
@@ -83,7 +87,7 @@ export default function LoggedInNavbar() {
             Our Story
           </a>
           <a
-            href="#"
+            href="/activity-listing"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
           >
             Search Activities
@@ -95,7 +99,7 @@ export default function LoggedInNavbar() {
             For Providers
           </a>
           <a
-            href="#"
+            href="/contact"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
           >
             Contact

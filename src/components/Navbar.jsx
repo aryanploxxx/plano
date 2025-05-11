@@ -10,18 +10,20 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="w-full bg-white shadow-xs px-4 sm:px-6 lg:px-12">
+    <nav className="w-full bg-white shadow-xs px-3 sm:px-6 lg:px-12">
       {/* Desktop and Mobile Navbar */}
       <div className="max-w-7xl mx-auto lg:px-0">
         <div className="flex justify-between h-20 items-center">
             {/* Logo */}
-            <div className="flex-shrink-0">
-                    <img 
-                        src="/plan-o-logo-navbar.svg" 
-                        alt="Plan Logo" 
-                        className="h-12 w-100px md:w-auto"
-                    />
-            </div>
+            <a href='/'>
+              <div className="flex-shrink-0">
+                <img 
+                    src="/plan-o-logo-navbar.svg" 
+                    alt="Plan Logo" 
+                    className="h-12 w-100px md:w-auto"
+                />
+              </div>
+            </a>
 
             <div className="hidden lg:flex flex-row items-center justify-end gap-14 w-full ">
               {/* Desktop Navigation Links */}
@@ -32,7 +34,7 @@ export default function Navbar() {
                   <a href="#" className="text-[#6D737A] poppins-regular hover:text-gray-900 px-3 py-2 text-base font-medium">
                     For Providers
                   </a>
-                  <a href="#" className="text-[#6D737A] poppins-regular hover:text-gray-900 px-3 py-2 text-base font-medium">
+                  <a href="/contact" className="text-[#6D737A] poppins-regular hover:text-gray-900 px-3 py-2 text-base font-medium">
                     Contact
                   </a>
               </div>
@@ -90,7 +92,7 @@ export default function Navbar() {
             For Providers
           </a>
           <a
-            href="#"
+            href="/contact"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
           >
             Contact

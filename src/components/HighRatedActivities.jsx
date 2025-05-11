@@ -11,50 +11,7 @@ const activities = [
     { id: 6, title: "Painting", image: "/painting.svg" },  
 ];
 
-const testimonials = [
-  {
-    id: 1,
-    rating: 5,
-    content: "PlanO has been a total game-changer for my daughter. She tried watercolor painting for the first time and now spends hours creating beautiful art. I love how the platform blends structure with creativity.",
-    author: "Aarti M",
-    location: "Mumbai, India",
-    avatar: "/lovable-uploads/5ac3f149-44a9-47d8-8b8c-af0cd7aa9a24.png",
-  },
-  {
-    id: 2,
-    rating: 5,
-    content: "PlanO has been a total game-changer for my daughter. She tried watercolor painting for the first time and now spends hours creating beautiful art. I love how the platform blends structure with creativity.",
-    author: "Aarti M",
-    location: "Mumbai, India", 
-    avatar: "/lovable-uploads/5ac3f149-44a9-47d8-8b8c-af0cd7aa9a24.png",
-  },
-  {
-    id: 3,
-    rating: 5,
-    content: "PlanO has been a total game-changer for my daughter. She tried watercolor painting for the first time and now spends hours creating beautiful art. I love how the platform blends structure with creativity.",
-    author: "Aarti M",
-    location: "Mumbai, India",
-    avatar: "/lovable-uploads/5ac3f149-44a9-47d8-8b8c-af0cd7aa9a24.png", 
-  },
-  {
-    id: 4,
-    rating: 5, 
-    content: "PlanO has been a total game-changer for my daughter. She tried watercolor painting for the first time and now spends hours creating beautiful art. I love how the platform blends structure with creativity.",
-    author: "Aarti M",
-    location: "Mumbai, India",
-    avatar: "/lovable-uploads/5ac3f149-44a9-47d8-8b8c-af0cd7aa9a24.png",
-  },    
-  {
-    id: 5,
-    rating: 4,
-    content: "PlanO has been a total game-changer for my daughter. She tried watercolor painting for the first time and now spends hours creating beautiful art. I love how the platform blends structure with creativity.",
-    author: "Aarti M",
-    location: "Mumbai, India",
-    avatar: "/lovable-uploads/5ac3f149-44a9-47d8-8b8c-af0cd7aa9a24.png",
-  },
-];
-
-const HighRatedActivities = () => {
+const HighRatedActivities = ({ headline }) => {
   const scrollContainerRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -180,7 +137,7 @@ return (
       <div className="relative w-full max-w-full overflow-hidden py-16">
           <div className="flex flex-row justify-between items-center mb-3 px-3 md:px-12">
               <h2 className="poppins-bold text-[24px] md:text-[32px] lg:text-[42px] leading-[110%] tracking-normal align-bottom">
-                Highly rated activity providers in your area
+                {headline || "Highly rated activity providers in your area"}
               </h2>
               <p className="hidden md:block poppins-semibold text-[20px] text-[#0D53E0] hover:cursor-pointer z-20">View All</p>
           </div>

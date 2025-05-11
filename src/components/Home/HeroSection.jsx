@@ -19,11 +19,13 @@ const HeroSection = () => {
                     <p className='poppins-regular md:text-[16px] lg:text-[24px] leading-[120%] text-[#505050]'>
                         Whether it's swim lessons, math classes, or anything in between, PlanO helps you discover, and manage all your child's activities in one convenient place.
                     </p>
-                    <div className="bg-gradient-to-r from-[#00A1E4] to-[#FF3B7B] p-[2px] rounded-xl inline-block mt-4">
-                        <button className="bg-[#2643A2] text-white md:px-8 md:py-3 lg:px-6 lg:py-2 rounded-xl w-full h-full poppins-semibold transition duration-300 hover:bg-[#1e3788] hover:cursor-pointer">
-                            Get Started
-                        </button>
-                    </div>
+                    <a href='/quiz'>
+                        <div className="bg-gradient-to-r from-[#00A1E4] to-[#FF3B7B] p-[2px] rounded-xl inline-block mt-4">
+                            <button className="bg-[#2643A2] text-white md:px-8 md:py-3 lg:px-6 lg:py-2 rounded-xl w-full h-full poppins-semibold transition duration-300 hover:bg-[#1e3788] hover:cursor-pointer">
+                                Get Started
+                            </button>
+                        </div>
+                    </a>
                 </div>
 
                 {/* Image */}
